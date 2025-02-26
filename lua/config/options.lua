@@ -10,6 +10,9 @@ vim.g.mapleader = ","
 -- Autoformat disable by default (Use LazyFormat)
 vim.b.autoformat = false -- TODO not working
 
+-- Disable AI in completion, only relay on inline suggestion
+vim.g.ai_cmp = false
+
 -- Close terminal after leaving (NO process exited 0 buffer left)
 vim.cmd("autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')")
 
