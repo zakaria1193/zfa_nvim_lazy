@@ -7,11 +7,18 @@ vim.api.nvim_set_keymap("", "<,>", "<Nop>", {})
 vim.g.maplocalleader = ","
 vim.g.mapleader = ","
 
+---- LazyVim options
+
 -- Autoformat disable by default (Use LazyFormat)
 vim.b.autoformat = false -- TODO not working
 
 -- Disable AI in completion, only relay on inline suggestion
 vim.g.ai_cmp = false
+
+-- Disable smooth scrolling
+vim.g.snacks_animate = false
+
+----------------
 
 -- Close terminal after leaving (NO process exited 0 buffer left)
 vim.cmd("autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')")
