@@ -9,8 +9,8 @@ vim.g.mapleader = ","
 
 ---- LazyVim options
 
--- Autoformat disable by default (Use LazyFormat)
-vim.b.autoformat = false -- TODO not working
+-- Autoformat disable by default
+vim.g.autoformat = false
 
 -- Disable AI in completion, only relay on inline suggestion
 vim.g.ai_cmp = false
