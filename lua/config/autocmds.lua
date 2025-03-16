@@ -41,3 +41,16 @@ vim.cmd([[
     autocmd BufRead,BufNewFile *.slc[cpe] set filetype=yaml
   augroup end
 ]])
+
+-- Automatically change the severity of diagnostics based on the number of errors
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+  callback = function()
+    local count = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
+    if count > 10 then
+      -- Disable diags from UI
+      vim.diagnostic.enable(false, {})
+    else
+      vim.diagnostic.enable(true, {})
+    end
+  end,
+})
