@@ -7,6 +7,15 @@ vim.api.nvim_set_keymap("", "<,>", "<Nop>", {})
 vim.g.maplocalleader = ","
 vim.g.mapleader = ","
 
+---- Diagnostics options
+vim.diagnostic.config({
+  -- Alternatively, customize specific options
+  virtual_lines = {
+    -- Only show virtual line diagnostics for the current cursor line
+    current_line = true,
+  },
+})
+
 ---- LazyVim options
 
 -- Autoformat disable by default
