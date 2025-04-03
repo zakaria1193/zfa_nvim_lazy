@@ -48,6 +48,12 @@ keymap("n", "<C-]>", "g<C-]>", opts)
 keymap("n", "]q", ":cnext<CR>", opts)
 keymap("n", "[q", ":cprevious<CR>", opts)
 
+
+-- Next dagnostic
+-- Override https://github.com/LazyVim/LazyVim/blob/master/lua/lazyvim/config/keymaps.lua#L130 until it stops using deprecated vim.diagnostic.goto_next function
+keymap("n", "]d", ":lua vim.diagnostic.jump({count=1})<CR>", opts)
+keymap("n", "[d", ":lua vim.diagnostic.jump({count=-1})<CR>", opts)
+
 -- Enable/Disable copilot ]p and [p
 keymap("n", "]p", "<cmd>Copilot enable<CR>", opts)
 keymap("n", "[p", "<cmd>Copilot disable<CR>", opts)
